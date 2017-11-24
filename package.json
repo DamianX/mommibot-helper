@@ -1,0 +1,60 @@
+{
+    "name": "mommibot-helper",
+    "displayName": "MoMMIbot Helper",
+    "description": "Turns selected lines of code into MoMMIbot-compatible strings",
+    "version": "0.0.1",
+    "repository": "https://github.com/DamianX/mommibot-helper",
+    "license": "GPL-3.0",
+    "publisher": "damian",
+    "engines": {
+        "vscode": "^1.18.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:mommibot.makeMoMMIbotIdentifier"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "keybindings": [{
+            "command": "mommibot.makeMoMMIbotIdentifier",
+            "key": "ctrl+shift+l",
+            "mac": "cmd+shift+l",
+            "when": "editorTextFocus"
+        }],
+        "configuration": {
+            "title": "MoMMIbot helper configuration",
+            "properties": {
+                "mommibot.useGithubStyle": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Use [filename.dm#L0-L10], as opposed to the default [filename.dm:0-10]"
+                }
+            }
+        },
+        "commands": [
+            {
+                "command": "mommibot.makeMoMMIbotIdentifier",
+                "title": "Make MoMMIbot identifier"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "@types/clipboardy": "^1.1.0",
+        "clipboardy": "^1.2.2"
+    }
+}
