@@ -2,7 +2,7 @@
     "name": "mommibot-helper",
     "displayName": "MoMMIbot Helper",
     "description": "Turns selected lines of code into MoMMIbot-compatible strings",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "repository": "https://github.com/DamianX/mommibot-helper",
     "license": "GPL-3.0",
     "publisher": "damian",

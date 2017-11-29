@@ -13,7 +13,10 @@ Works with no selection (only includes the filename), one line selection or mult
 ## Settings
 * `mommibot.useGithubStyle`: Use `[filename.dm#L0-L10]`, as opposed to the default `[filename.dm:0-10]`
 
-### 1.0.0
+## Changelog
+### 0.0.2
+Fixed off-by-one errors
+### 0.0.1
 Initial release
 
 Licensed under **GPLv3**.

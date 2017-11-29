@@ -34,16 +34,16 @@ export function activate(context: vscode.ExtensionContext) {
 
         var use_github_style: boolean = vscode.workspace.getConfiguration('mommibot').get('useGithubStyle');
 
-        var lines: number[] = []
+        var lines: number[] = [];
 
         var selection = editor.selection;
 
         if (!selection.isEmpty) {
             if (selection.isSingleLine) {
-                lines.push(selection.active.line);
+                lines.push(selection.active.line + 1);
             } else {
-                lines.push(selection.start.line);
-                lines.push(selection.end.line);
+                lines.push(selection.start.line + 1);
+                lines.push(selection.end.line + 1);
             }
         }
 
